@@ -17,6 +17,6 @@ void NumRendom()
     Console.WriteLine($"{num} -> {num / 100}{num % 10}");    
 }
 
-NumRendom();
+// NumRendom();
 
 
