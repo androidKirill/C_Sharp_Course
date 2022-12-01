@@ -13,3 +13,4 @@ int SumNums(int num)
 }
 
 Console.WriteLine(SumNums(int.Parse(Console.ReadLine())));
+
