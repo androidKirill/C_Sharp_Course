@@ -16,13 +16,13 @@ while (m <= N)
 
 // --------------------------------------- вариант 2
 
-int N = int.Parse(Console.ReadLine());
-int m = -N;
+int NN = int.Parse(Console.ReadLine());
+int mm = -N;
 
-while (m != N)
+while (mm != N)
 {
-    Console.Write($"{m} ");
-    if (N > 0) m += 1;
-    else m -= 1;
+    Console.Write($"{mm} ");
+    if (NN > 0) mm += 1;
+    else mm -= 1;
 }
-Console.Write($"{m} ");
+Console.Write($"{mm} ");
