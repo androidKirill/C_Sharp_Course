@@ -21,7 +21,7 @@ Squares(11);
 
 // 2 вариант
 
-void Squares(int n)
+void Squares_1(int n)
 {
     double[] nums = new double[n];
     int index = 0;
@@ -37,14 +37,14 @@ void Squares(int n)
     Console.WriteLine();
 }
 
-Squares(6);
-Squares(2);
-Squares(11);
+Squares_1(6);
+Squares_1(2);
+Squares_1(11);
 
 
 // 3 вариант
 
-double[] Squares(int n)
+double[] Squares_2(int n)
 {
     double[] nums = new double[n];
     int index = 0;
@@ -60,7 +60,7 @@ double[] Squares(int n)
 
 void PrintList(int num)
 {
-    double[] arr = Squares(num); 
+    double[] arr = Squares_2(num); 
     int index = 0;
     
     Console.Write($"{num} -> ");
