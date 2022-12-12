@@ -1,16 +1,18 @@
-﻿int CountNum()
+﻿// 2. Напишите программу, которая будет
+//    преобразовывать десятичное число в двоичное.
+
+
+string Binary(int num)
 {
-    int count = 0;
-    string word;
+    string res = "";
 
-    while (true)
+    while (num > 0)
     {
-        Console.Write("Output any number: ");
-        word = Console.ReadLine();
-
-        if ("".Join(word.Split(" ")) == "") return count;
-        else if (int.Parse(word) > 0) count += 1;        
+        res = num % 2 + res;
+        num /= 2;
     }
+    return res;
 }
 
-Console.Write(CountNum());
+// 12 - 1100, 4 - 100, 45 - 101101
+Console.WriteLine(Binary(int.Parse(Console.ReadLine())));
