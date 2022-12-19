@@ -1,5 +1,5 @@
-﻿// 3. Задайте двумерный массив из целых чисел.
-//    Найдите среднее арифметическое элементов в каждом столбце.
+﻿// 1. Задайте двумерный массив. Напишите программу,
+//    которая поменяет местами первую и последнюю строку массива.
 
 void Print(int[,] arr)
 {
@@ -25,18 +25,13 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
-void ArithmeticMean(int[,] arr)
+void FirstWithLast(int[,] arr)
 {
     int row = arr.GetLength(0);
     int column = arr.GetLength(1);
-    double res;
 
-    for (int j = 0; j < column; j++)
-    {
-        res = 0;
-        for (int i = 0; i < row; i++) res += arr[i, j];
-        Console.Write($"{Math.Round(res / row, 2)}; ");
-    }
+    for (int i = 0; i < column; i++)            
+        (arr[0, i], arr[row - 1, i]) = (arr[row - 1, i], arr[0, i]);     
 }
 
 Console.Write("Enter the number of rows: ");
@@ -49,4 +44,5 @@ int[,] arr_1 = MassNums(row, column,
                         int.Parse(Console.ReadLine()));
 Print(arr_1);
 
-ArithmeticMean(arr_1);
+FirstWithLast(arr_1);
+Print(arr_1);

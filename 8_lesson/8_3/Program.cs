@@ -1,5 +1,7 @@
-﻿// 3. Задайте двумерный массив из целых чисел.
-//    Найдите среднее арифметическое элементов в каждом столбце.
+﻿// 3. Составить частотный словарь элементов двумерного массива.
+//    Частотный словарь содержит информацию о том, сколько раз 
+//    встречается элемент входных данных. Значения элементов массива 0..9
+//    https://metanit.com/sharp/tutorial/4.9.php
 
 void Print(int[,] arr)
 {
@@ -9,7 +11,7 @@ void Print(int[,] arr)
     for (int i = 0; i < row_size; i++)
     {
         for (int j = 0; j < column_size; j++)
-            Console.Write($" {arr[i, j]} ");
+            Console.Write($" {arr[i, j],3} ");
         Console.WriteLine();
     }
     Console.WriteLine();
@@ -25,18 +27,19 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
-void ArithmeticMean(int[,] arr)
+int[] FrequencyDict(int[,] arr)
 {
-    int row = arr.GetLength(0);
-    int column = arr.GetLength(1);
-    double res;
+    int[] freq = new int[10];
 
-    for (int j = 0; j < column; j++)
-    {
-        res = 0;
-        for (int i = 0; i < row; i++) res += arr[i, j];
-        Console.Write($"{Math.Round(res / row, 2)}; ");
-    }
+    foreach (int item in arr) freq[item] += 1;
+    return freq;
+}
+
+void PrintMass(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+        Console.WriteLine($"{i} meets: {arr[i]}");
+    Console.WriteLine();
 }
 
 Console.Write("Enter the number of rows: ");
@@ -49,4 +52,5 @@ int[,] arr_1 = MassNums(row, column,
                         int.Parse(Console.ReadLine()));
 Print(arr_1);
 
-ArithmeticMean(arr_1);
+int[] mass = FrequencyDict(arr_1);
+PrintMass(mass);
